@@ -16,6 +16,8 @@ interface DisplayCardProps extends HTMLAttributes<HTMLDivElement> {
   totalTask?: string;
   comments?: string;
   links?: string;
+  percentage?: number;
+  stage?: "todo" | "inprogress" | "completed";
 }
 
 export default forwardRef<HTMLDivElement, DisplayCardProps>(
@@ -29,6 +31,8 @@ export default forwardRef<HTMLDivElement, DisplayCardProps>(
       totalTask,
       comments,
       links,
+      percentage,
+      stage,
       className,
       children,
       ...props
@@ -39,14 +43,14 @@ export default forwardRef<HTMLDivElement, DisplayCardProps>(
       <div
         {...props} // this is for any other property or properties that isn't destructured above
         className={tailwindMerger(
-          `bg-white min-w-[300px] max-w-[600px] p-4 ${className}`
+          `bg-white min-w-[260px] p-4 shadow-light rounded-xl ${className}`
         )}
         ref={ref}
       >
         {/* The image section of the product card - only shows 
         when you pass in the imageSrc to the DisplayCard */}
         {imageSrc && (
-          <div className="w-full h-max bg-gray-1 rounded-[16px] overflow-hidden">
+          <div className="w-full h-max bg-gray-1 overflow-hidden mb-[18px]">
             <img
               className="w-full"
               src={imageSrc ?? TaskImage}
@@ -61,7 +65,7 @@ export default forwardRef<HTMLDivElement, DisplayCardProps>(
           // In house display card product information component -
           // only shows when there is no children supplied to the DisplayCard
           <div className="flex flex-col gap-1">
-            <div className="flex items-start justify-between">
+            <div className="flex items-start justify-between mb-[14px]">
               <div>
                 <h1 className="text-base leading-5 font-[600]">
                   {title ?? "Highfidelity Design"}
@@ -70,8 +74,10 @@ export default forwardRef<HTMLDivElement, DisplayCardProps>(
                   {description ?? "Make clear design and color"}
                 </p>
               </div>
-
-              <img src={OptionsIcon} alt="options" />
+              {/* Options */}
+              <button type="button" className="bg-transparent border-none">
+                <img src={OptionsIcon} alt="options" />
+              </button>
             </div>
 
             {/* Progress Component */}
@@ -92,9 +98,16 @@ export default forwardRef<HTMLDivElement, DisplayCardProps>(
               <div className="w-full h-2 rounded-lg overflow-hidden bg-gray-4">
                 <div
                   style={{
-                    width: "40%",
+                    width: `${percentage!.toString()}%`,
                     height: "100%",
-                    backgroundColor: "limegreen",
+                    backgroundColor:
+                      stage === "todo"
+                        ? "transparent"
+                        : stage === "inprogress"
+                        ? "#FF5F37"
+                        : stage === "completed"
+                        ? "#8BC488"
+                        : "transparent",
                   }}
                   className="transition-all duration-200"
                 />

@@ -25,6 +25,9 @@ export default {
           1: "#000000",
         },
       },
+      boxShadow: {
+        light: "0px 0px 100px rgba(0, 0, 0, 0.02)",
+      },
     },
   },
   plugins: [],

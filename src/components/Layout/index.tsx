@@ -1,5 +1,6 @@
 import { HTMLAttributes, forwardRef } from "react";
 import Sidebar from "../Sidebar";
+import TopNavigation from "../TopNavigation";
 
 interface LayoutProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -8,14 +9,18 @@ export default forwardRef<HTMLDivElement, LayoutProps>(function Layout(
   ref
 ) {
   return (
-    <main className="w-screen flex" ref={ref}>
+    <main className="w-screen h-screen overflow-hidden flex" ref={ref}>
       {/* Sidebar */}
       <Sidebar />
-      {/* Main content */}
-      <section>
+
+      <section className="w-full">
         {/* Top Navigation */}
-        <div>Top Navigation</div>
-        {children}
+        <TopNavigation />
+
+        {/* Main content */}
+        <div className="w-full h-[calc(100%-21px)] lg:mt-[221px] overflow-y-hidden bg-gray-1">
+          {children}
+        </div>
       </section>
     </main>
   );

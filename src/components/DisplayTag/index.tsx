@@ -15,7 +15,7 @@ export default forwardRef<HTMLDivElement, DisplayCardProps>(function DisplayTag(
     <div
       {...props} // this is for any other property or properties that isn't destructured above
       className={tailwindMerger(
-        `bg-gray-3 rounded-lg min-w-[300px] max-w-[600px] p-4 h-[51px] flex items-center justify-between ${className}`
+        `bg-gray-3 rounded-lg min-w-[260px] p-4 h-[51px] flex items-center justify-between ${className}`
       )}
       ref={ref}
     >
