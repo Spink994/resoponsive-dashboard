@@ -68,7 +68,7 @@ export default forwardRef<HTMLDivElement, SidebarProps>(function Sidebar(
       </div>
 
       <div className="max-w-[208px] w-full mt-12">
-        <Button size="md" className="w-full rounded-lg bg-primary-1 text-white">
+        <Button size="md" className="w-full text-base whitespace-nowrap rounded-lg bg-primary-1 text-white">
           <img src={PlusIcon} alt="plus" /> NEW PROJECT
         </Button>
       </div>
