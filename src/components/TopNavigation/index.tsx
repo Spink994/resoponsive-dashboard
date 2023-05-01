@@ -51,7 +51,7 @@ export default forwardRef<HTMLDivElement, TopNavigationProps>(
 
           {/* Lower section */}
           <div
-            className={`w-full absolute top-10 py-8 [@media_(min-width:_840px)]:py-0 [@media_(min-width:_840px)]:top-0 bg-white left-0 [@media_(min-width:_840px)]:px-0 px-4 [@media_(min-width:_840px)]:relative mt-12  [@media_(min-width:_840px)]:flex ${
+            className={`w-full absolute top-10 py-8 [@media_(min-width:_840px)]:py-0 [@media_(min-width:_840px)]:top-0 bg-white left-0 [@media_(min-width:_840px)]:px-0 px-4 [@media_(min-width:_840px)]:relative mt-12 h-screen [@media_(min-width:_840px)]:h-max [@media_(min-width:_840px)]:flex ${
               isHidden ? "-translate-x-[120%]" : "translate-x-0"
             }  [@media_(min-width:_840px)]:flex-row flex-col items-center justify-between [@media_(min-width:_840px)]:translate-x-0 transition-all duration-200`}
           >
