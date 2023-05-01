@@ -110,6 +110,14 @@ export default forwardRef<HTMLDivElement, TopNavigationProps>(
               <Button variant="ghost" className="text-gray-5 text-sm px-3 pr-0">
                 <img src={PlusIcon} className="invert" alt="icon" />
               </Button>
+              <div className="max-w-[208px] w-full mt-12 [@media_(min-width:_840px)]:hidden ml-3">
+                <Button
+                  size="md"
+                  className="w-full text-base whitespace-nowrap rounded-lg bg-black-1 text-white"
+                >
+                  <img src={PlusIcon} alt="plus" /> NEW PROJECT
+                </Button>
+              </div>
             </div>
           </div>
         </div>
