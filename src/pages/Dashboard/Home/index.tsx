@@ -10,7 +10,7 @@ import Button from "../../../components/Button";
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-full h-full p-16 overflow-y-auto">
+    <div className="flex flex-col w-full h-full md:p-16 md:pb-24 p-8 pt-16">
       <div className="flex items-start gap-[40px] flex-wrap">
         <div className="flex flex-col flex-1 min-w-[260px]">
           <DisplayTag className="mb-6" />

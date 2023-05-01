@@ -13,12 +13,12 @@ export default forwardRef<HTMLDivElement, LayoutProps>(function Layout(
       {/* Sidebar */}
       <Sidebar />
 
-      <section className="w-full">
+      <section className="w-full overflow-y-auto">
         {/* Top Navigation */}
         <TopNavigation />
 
         {/* Main content */}
-        <div className="w-full h-[calc(100%-21px)] lg:mt-[221px] overflow-y-hidden bg-gray-1">
+        <div className="w-full h-[calc(100%-21px)] [@media_(min-width:_840px)]:mt-0 mt-[60px] bg-gray-1">
           {children}
         </div>
       </section>

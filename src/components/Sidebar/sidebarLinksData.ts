@@ -18,27 +18,27 @@ export default {
       {
         label: "Settings",
         icon: SettingsIcon,
-        link: "/",
+        link: "/settings",
       },
       {
         label: "Activities",
         icon: ActivitiesIcon,
-        link: "/",
+        link: "/activities",
       },
       {
         label: "Users",
         icon: UsersIcon,
-        link: "/",
+        link: "/users",
       },
       {
         label: "Added user",
         icon: AddedUserIcon,
-        link: "/",
+        link: "/added-users",
       },
       {
         label: "Affiliate",
         icon: AffiliateIcon,
-        link: "/",
+        link: "/affilitate",
       },
     ],
 
@@ -46,12 +46,12 @@ export default {
       {
         label: "Profile",
         icon: ProfileIcon,
-        link: "/",
+        link: "/profile",
       },
       {
         label: "Logout",
         icon: LogoutIcon,
-        link: "/",
+        link: "/login",
       },
     ],
   },
